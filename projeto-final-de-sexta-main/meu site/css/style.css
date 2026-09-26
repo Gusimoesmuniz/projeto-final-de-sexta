@@ -1,0 +1,154 @@
+/* ==========================================================================
+   1. RESET GERAL E TIPOGRAFIA
+   ========================================================================== */
+   * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Garante que os espaçamentos não quebrem o tamanho das caixas */
+}
+
+/* Suaviza a rolagem da página quando clicar nos links do menu */
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* AJUSTE AESTHETIC: Fundo Deep Petrol / Azul-Esverdeado Escuro (Opção 2) */
+    background: #041a24;
+    background: linear-gradient(135deg, #041a24 0%, #0a2e3d 40%, #01080d 100%);
+    font-family: Arial, sans-serif; /* Tipografia padrão limpa (você pode mudar depois) */
+    color: #cbd5e1;                 /* Texto claro para dar contraste no fundo escuro */
+    line-height: 1.6;               /* Espaçamento confortável entre as linhas de texto */
+}
+
+/* Configuração básica para as imagens não estourarem a tela */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 12px;           /* Bordas arredondadas modernas nas fotos */
+    box-shadow: 0 15px 30px rgba(0,0,0,0.4); /* Sombra sutil sob as mídias */
+}
+
+/* Regra extra para dar destaque aos títulos das seções no fundo escuro */
+h1, h2, h3 {
+    color: #ffffff;                 /* Títulos em branco puro para brilharem no fundo */
+}
+
+/* ==========================================================================
+   2. ORGANIZAÇÃO DO CABEÇALHO (Logotipo e Menu lado a lado)
+   ========================================================================== */
+.main-header {
+    display: flex;                  /* Ativa o Flexbox para colocar os elementos em linha */
+    justify-content: space-between; /* Joga a logo para a esquerda e o menu para a direita */
+    align-items: center;            /* Alinha os itens verticalmente ao centro */
+    padding: 20px 40px;             /* Espaçamento interno (cima/baixo e lados) */
+    
+    /* FIXADO NO TOPO: Mantém o menu visível ao rolar a página */
+    position: sticky;               
+    top: 0;
+    z-index: 1000;
+
+    /* COMBINAÇÃO COM A OPÇÃO 2: Fundo escuro azul-petróleo com transparência */
+    background: rgba(4, 26, 36, 0.75); 
+    
+    /* EFEITO AESTHETIC: Desfoca o conteúdo que passa por trás do menu (Glassmorphism) */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    /* BORDA COMBINANDO: Uma linha bem fina usando a cor do seu botão ciano com transparência */
+    border-bottom: 1px solid rgba(56, 189, 248, 0.15); 
+    
+    /* SOMBRA SUAVE: Dá profundidade e separa o cabeçalho do resto do site */
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.4);
+}
+
+/* Correção para o título específico de dentro da logo não ficar gigante */
+.logo h1 {
+    font-size: 1.5rem;
+}
+
+.logo p {
+    font-size: 0.8rem;
+    color: #94a3b8;
+}
+
+.nav-menu a {
+    text-decoration: none;          /* Remove o sublinhado padrão dos links */
+    color: #e2e8f0;                 /* Links claros que combinam com o cabeçalho */
+    margin-left: 20px;              /* Espaçamento entre um link e outro */
+    font-weight: bold;
+    transition: color 0.3s ease;    /* Transição suave ao passar o mouse */
+}
+
+.nav-menu a:hover {
+    color: #38bdf8;                 /* Cor ciano ao passar o mouse */
+}
+
+/* ==========================================================================
+   3. SEÇÃO PRINCIPAL (Hero - Texto de um lado, Imagem do outro)
+   ========================================================================== */
+.hero-section {
+    display: flex;                  /* Ativa o Flexbox para colocar texto e imagem lado a lado */
+    align-items: center;            /* Alinha verticalmente ao centro */
+    gap: 40px;                      /* Espaçamento (respiro) entre a coluna de texto e a imagem */
+    padding: 80px 40px;             
+}
+
+/* Distribui o espaço igualmente: metade para o texto, metade para a imagem */
+.hero-content > div, 
+.hero-section > div {
+    flex: 1;
+}
+
+/* Estilização básica para títulos grandes de impacto */
+.hero-section h1 {
+    font-size: 3rem;                
+    margin-bottom: 20px;            /* Afasta o título do parágrafo de baixo */
+    color: #ffffff;                 
+}
+
+/* Estilização básica para o botão funcional */
+.btn-action, button {
+    display: inline-block;
+    background-color: #38bdf8;      /* Azul ciano/neon luminoso que contrasta com seu fundo */
+    color: #030201;                 /* Texto escuro para dar leitura perfeita */
+    padding: 14px 28px;             /* Espaçamento interno para dar corpo ao botão */
+    text-decoration: none;          /* Remove sublinhado */
+    border: none;                   /* Remove bordas padrões caso use a tag <button> */
+    border-radius: 50px;            /* Formato pílula super moderno */
+    margin-top: 20px;               /* Afasta o botão do texto acima dele */
+    font-weight: bold;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.3); /* Sombra luminosa */
+    transition: all 0.3s ease;
+}
+
+/* Efeito interativo no botão ao passar o mouse */
+.btn-action:hover, button:hover {
+    transform: translateY(-3px);    /* Levanta levemente o botão */
+    box-shadow: 0 8px 20px rgba(56, 189, 248, 0.5);
+    background-color: #7dd3fc;      /* Clarea sutilmente a cor */
+}
+
+/* ==========================================================================
+   4. SEÇÕES DE CONTEÚDO E RODAPÉ (Espaçamentos Padrão)
+   ========================================================================== */
+.content-section {
+    padding: 80px 40px;             /* Respiro confortável entre as seções */
+}
+
+/* Pequeno detalhe estético abaixo dos títulos das seções internas */
+.content-section h2 {
+    font-size: 2.2rem;
+    margin-bottom: 15px;
+}
+
+.main-footer {
+    background-color: #01080d;      /* Cor idêntica ao final exato do seu novo gradiente */
+    color: #64748b;                 /* Tom de cinza discreto e elegante */
+    text-align: center;             /* Centraliza as informações do projeto */
+    padding: 40px 20px;             
+    font-size: 0.9rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.05); /* Linha divisória sutil */
+}
